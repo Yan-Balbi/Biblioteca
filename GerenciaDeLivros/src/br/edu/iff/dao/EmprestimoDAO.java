@@ -14,6 +14,10 @@ import br.edu.iff.model.Usuario;
 public class EmprestimoDAO {
 	Connection connection;
 	
+	public EmprestimoDAO(int num) {
+		
+	}
+	
 	public EmprestimoDAO(){
 		try {
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/biblioteca?user=root");
@@ -23,7 +27,7 @@ public class EmprestimoDAO {
 		}
 	}
 	
-	/*private*/private void setDisponibilidadeSQL(boolean value, String isbn) {
+	private void setDisponibilidadeSQL(boolean value, String isbn) {
 		PreparedStatement ps;
 		
 		try {
@@ -260,7 +264,7 @@ public class EmprestimoDAO {
 		return false;
 	}
 	
-	private boolean estaAtrasadoCPFSQL(String cpf) {
+	boolean estaAtrasadoCPFSQL(String cpf) {
 		int usuarioId = getUsuarioByCPF(cpf);
 		LocalDate dataAtual = LocalDate.now();
 //		java.sql.Date dataAtual = java.sql.Date.valueOf(dataAt);
@@ -358,7 +362,7 @@ public class EmprestimoDAO {
 		return false;//não está atrasado pois o cpf não está registrado na tabela
 	}
 	
-	private boolean usuarioPossuiEmprestimoEmAndamentoSQL(String cpf) {
+	boolean usuarioPossuiEmprestimoEmAndamentoSQL(String cpf) {
 		int usuarioId = getUsuarioByCPF(cpf);
 		PreparedStatement ps;
 		
@@ -418,7 +422,7 @@ public class EmprestimoDAO {
 		return -1;
 	}
 	
-	private int getUsuarioByCPF(String cpf) {
+	public int getUsuarioByCPF(String cpf) {
 		PreparedStatement ps;
 		
 		try {

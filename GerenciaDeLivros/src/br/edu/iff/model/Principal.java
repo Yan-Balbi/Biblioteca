@@ -254,7 +254,8 @@ public class Principal {
 		
 		//========================================EMPRESTIMO==================================================
 		List<Emprestimo> listaEmprestimos= new LinkedList<>();
-//		emprestimos.registerEmprestimo("12141726794", "9789510445877");
+//		emprestimos.registerEmprestimo("29706609032", "9788556520487");
+		usuarios.deleteUsuario("29706609032");
 //		emprestimos.accomplishEmprestimo("12141726794");
 		
 //		listaEmprestimos = emprestimos.getEmprestimosAtivos();

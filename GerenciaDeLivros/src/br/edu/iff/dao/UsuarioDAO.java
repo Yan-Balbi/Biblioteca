@@ -125,10 +125,17 @@ public class UsuarioDAO {
 		//Livro livro = new Livro(isbn,nome, editora, categoria);
 		PreparedStatement ps;
 		try {
-			ps = connection.prepareStatement("DELETE FROM usuario WHERE cpf = ?");
-			ps.setString(1, cpf);
-			ps.executeUpdate();
-			System.out.println("Remoção concluida");
+			//O usuário só pode ser removido caso ele não tenha emprestimos em andamento e nem emprestimos atrasados
+			EmprestimoDAO emp = new EmprestimoDAO();
+			if(emp.usuarioPossuiEmprestimoEmAndamentoSQL(cpf)==false &&emp.estaAtrasadoCPFSQL(cpf)==false) {
+				ps = connection.prepareStatement("DELETE FROM usuario WHERE cpf = ?");
+				ps.setString(1, cpf);
+				ps.executeUpdate();
+				System.out.println("Remoção concluida");
+			}
+			System.out.println("A remoção de usuário não pode ser concluída.");
+			//"UPDATE SET status = TRUE FROM emprestimo WHERE usuario_id = ? and status = false"
+
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
