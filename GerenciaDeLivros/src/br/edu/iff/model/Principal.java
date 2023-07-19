@@ -255,7 +255,7 @@ public class Principal {
 		//========================================EMPRESTIMO==================================================
 		List<Emprestimo> listaEmprestimos= new LinkedList<>();
 //		emprestimos.registerEmprestimo("29706609032", "9788556520487");
-		usuarios.deleteUsuario("29706609032");
+//		usuarios.deleteUsuario("29706609032");
 //		emprestimos.accomplishEmprestimo("12141726794");
 		
 //		listaEmprestimos = emprestimos.getEmprestimosAtivos();
@@ -279,9 +279,9 @@ public class Principal {
 //			+i.getLivro().getEditora()+"|"+i.getLivro().getCategoria()+"|"+i.getDataEmprestimo()+"|"+i.getDataDevolucao());
 //		}
 		
-//		emprestimos.realizarEmprestimo("94416527098", "9788576572046");
-//		emprestimos.estenderEntrega("9789510445877");
+//		emprestimos.registerEmprestimo("12141726794", "9788533622104");
+//		emprestimos.estenderEntrega("9788533622104");
 		
-		
+//		emprestimos.accomplishEmprestimo("12141726794");
 	}
 }

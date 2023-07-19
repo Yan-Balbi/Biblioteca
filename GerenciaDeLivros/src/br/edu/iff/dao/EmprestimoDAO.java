@@ -309,7 +309,7 @@ public class EmprestimoDAO {
 		
 		PreparedStatement ps;
 		try {
-			ps = connection.prepareStatement("SELECT status FROM emprestimo WHERE livro_id = ?");
+			ps = connection.prepareStatement("SELECT status FROM emprestimo WHERE livro_id = ? and status = 1 and renovacao = 0");
 			ps.setInt(1, usuarioId);
 			ResultSet rs = ps.executeQuery();
 			
@@ -338,7 +338,7 @@ public class EmprestimoDAO {
 		
 		PreparedStatement ps;
 		try {
-			ps = connection.prepareStatement("SELECT data_emprestimo, data_entrega FROM emprestimo WHERE livro_id = ?");
+			ps = connection.prepareStatement("SELECT data_emprestimo, data_entrega FROM emprestimo WHERE livro_id = ? and status = true and renovacao = false");
 			ps.setInt(1, usuarioId);
 			ResultSet rs = ps.executeQuery();
 			
