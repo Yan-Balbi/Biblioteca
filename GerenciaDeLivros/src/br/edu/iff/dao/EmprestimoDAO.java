@@ -500,8 +500,7 @@ public class EmprestimoDAO {
 					System.out.println("Estensão de prazo concluída");
 					
 				}
-			}
-			if(rs.next()==false) {
+			} else {
 				System.out.println("A renovação já foi realizada antes ou já está concluída.");
 			}
 		} catch (SQLException e) {

@@ -280,7 +280,7 @@ public class Principal {
 //		}
 		
 //		emprestimos.registerEmprestimo("12141726794", "9788533622104");
-//		emprestimos.estenderEntrega("9788533622104");
+		emprestimos.estenderEntrega("9788533622104");
 		
 //		emprestimos.accomplishEmprestimo("12141726794");
 	}
